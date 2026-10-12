@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZHACKS AI Workspace</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        
+        <!-- Left Sidebar (Gemini Style) -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-top">
+                <button class="icon-btn" id="toggle-sidebar-btn" title="Toggle Sidebar">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <button class="new-chat-btn" id="new-chat-btn">
+                    <i class="fa-solid fa-plus"></i>
+                    <span>New Chat</span>
+                </button>
+            </div>
+
+            <div class="mode-selector">
+                <button class="mode-tab active" id="tab-chat-btn">
+                    <i class="fa-solid fa-message"></i> <span>Chatbot</span>
+                </button>
+                <button class="mode-tab" id="tab-code-btn">
+                    <i class="fa-solid fa-code"></i> <span>Coding</span>
+                </button>
+            </div>
+
+            <div class="recent-chats-container">
+                <span class="recent-title">Recent Chats</span>
+                <div class="chat-list" id="chat-list">
+                    <!-- Dynamic Chat History Items -->
+                </div>
+            </div>
+
+            <div class="sidebar-footer">
+                <button class="clear-all-btn" id="clear-all-chats-btn">
+                    <i class="fa-solid fa-trash-can"></i> <span>Clear All History</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Workspace -->
+        <main class="main-content">
+            <header class="top-header">
+                <div class="brand-title">
+                    <span class="glow-text">ZHACKS</span> AI
+                </div>
+                <div class="header-actions" id="code-controls" style="display: none;">
+                    <label for="code-lang-select">Language:</label>
+                    <select id="code-lang-select">
+                        <option value="JavaScript">JavaScript</option>
+                        <option value="Python">Python</option>
+                        <option value="HTML/CSS">HTML/CSS</option>
+                        <option value="C++">C++</option>
+                        <option value="Bash/Shell">Bash / Shell</option>
+                    </select>
+                </div>
+            </header>
+
+            <!-- Chat Viewport with Background Logo -->
+            <div class="chat-viewport" id="chat-viewport">
+                <div class="logo-bg-container">
+                    <img src="logo.png" alt="ZHACKS Logo" class="bg-logo">
+                </div>
+
+                <div class="chat-messages" id="chat-messages">
+                    <!-- Dynamic Messages load here -->
+                </div>
+            </div>
+
+            <!-- Bottom Prompt Input Bar -->
+            <div class="input-container">
+                <div class="prompt-box">
+                    <textarea id="user-prompt-input" rows="1" placeholder="Type a message or prompt..."></textarea>
+                    <div class="prompt-actions">
+                        <button id="code-debug-btn" class="action-btn debug" style="display: none;" title="Debug & Fix Code">
+                            <i class="fa-solid fa-bug"></i> Debug Code
+                        </button>
+                        <button id="send-prompt-btn" class="send-btn">
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+                <p class="disclaimer">ZHACKS AI can generate code & assist in academic tasks. Double-check critical outputs.</p>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.app.js"></script>
+</body>
+</html>
